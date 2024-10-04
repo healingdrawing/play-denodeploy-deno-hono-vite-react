@@ -1,5 +1,7 @@
 # React + TypeScript + Vite
 
+The `frontend` folder includes react project created using command `deno run -A npm:create-vite@latest`, then choose `react` and `typescript`. Then modify.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
