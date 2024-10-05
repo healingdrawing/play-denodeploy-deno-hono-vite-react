@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Dino } from "../types";
+import { BACKHOST } from "../../../backend/deps"
 
 export default function Dinosaur() {
   const { selectedDinosaur } = useParams();
@@ -8,7 +9,7 @@ export default function Dinosaur() {
 
   useEffect(() => {
     (async () => {
-      const resp = await fetch(`http://localhost:8000/api/dinosaurs/${selectedDinosaur}`);
+      const resp = await fetch(`${BACKHOST}/api/dinosaurs/${selectedDinosaur}`);
       const dino = await resp.json() as Dino;
       setDino(dino);
     })();

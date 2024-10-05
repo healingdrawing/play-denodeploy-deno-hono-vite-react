@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Dino } from "../types.ts";
+import { BACKHOST } from "../../../backend/deps"
 
 export default function Index() {
   const [dinosaurs, setDinosaurs] = useState<Dino[]>([]);
 
   useEffect(() => {
     (async () => {
-      const response = await fetch(`http://localhost:8000/api/dinosaurs`);
+      const response = await fetch(`${BACKHOST}/api/dinosaurs`);
       try{
         if (response.ok){
           console.log("response.ok is true")
