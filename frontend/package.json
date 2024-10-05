@@ -10,7 +10,7 @@
     "preview": "vite preview",
 
     "devapp": "deno task dev:api & deno task dev:vite",
-    "dev:api": "deno run --allow-env --allow-net ../backend/main.ts",
+    "dev:api": "cd ../backend && deno run --allow-env --allow-net --allow-read ../backend/main.ts",
     "dev:vite": "deno run -A npm:vite"
   },
   "dependencies": {
