@@ -29,11 +29,9 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        working-directory: frontend
         run: "npm install"
 
       - name: Build step
-        working-directory: frontend
         run: "npm run build"
 
       - name: Upload to Deno Deploy
@@ -41,4 +39,4 @@ jobs:
         with:
           project: "deno-hono-vite-react"
           entrypoint: "https://deno.land/std@0.217.0/http/file_server.ts"
-          root: "frontend/dist"
+          root: "dist"
