@@ -3,9 +3,9 @@ import { loadSync, dprint } from "./deps.ts";
 console.log("loadSync",loadSync({ export: true }))
 
 /** back-end host. In dev mode placed in `.env` file */
-export const BACKHOST = get_env_variable("BACKHOST", true)
+export const BACKHOST:string = get_env_variable("BACKHOST", true)
 /** front-end host. In dev mode placed in `.env` file */
-export const FRONTHOST = get_env_variable("FRONTHOST", true)
+export const FRONTHOST:string = get_env_variable("FRONTHOST", true)
 
 /**
  * Checks if an environment variable exists and logs it. If it does not exist
