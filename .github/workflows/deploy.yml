@@ -37,6 +37,7 @@ jobs:
         run: "npm run build"
 
       - name: Upload to Deno Deploy
+        working-directory: frontend
         uses: denoland/deployctl@v1
         with:
           project: "deno-hono-vite-react"
