@@ -1,5 +1,6 @@
 import { Hono } from "../../deps.ts"
 import data from "../../data.json" with { type: "json" };
+console.log(data)
 
 const app = new Hono()
 
