@@ -34,9 +34,13 @@ jobs:
       - name: Build step
         run: "cd frontend && npm run build"
 
-      - name: Upload to Deno Deploy
+      - name: Deploy Frontend to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "deno-hono-vite-react"
           entrypoint: "https://deno.land/std@0.217.0/http/file_server.ts"
           root: "frontend/dist"
+
+      - name: Deploy Backend to Deno Deploy
+        run: |
+          deno run --allow-net --allow-read ./backend/main.ts
